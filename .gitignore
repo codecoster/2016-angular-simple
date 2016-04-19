@@ -1,0 +1,9 @@
+node_modules
+typings
+nbproject
+coverage/
+app/*.js
+app/*.js.map 
+test/*.js
+test/*.js.map 
+**/*d.ts

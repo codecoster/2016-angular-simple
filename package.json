@@ -1,0 +1,39 @@
+{
+    "name": "2016-01-angular2-simple",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "Karsten Sitterberg",
+    "scripts": {
+        "postinstall": "typings install --ambient",
+        "tsc": "tsc",
+        "tsc:w": "tsc -w",
+        "lite": "lite-server",
+        "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
+        "pretest": "npm run tsc",
+        "test": "karma start karma.conf.js",
+        "posttest": "node_modules/.bin/remap-istanbul -i coverage/coverage-final.json -o coverage -t html",
+        "coverage": "http-server -c-1 -o -p 9875 ./coverage",
+        "clean": "rm -rf app/*.js* && rm -rf test/*.js* && rm -rf coverage",
+        "distclean": "npm run clean && rm -rf node_modules && rm -rf typings"
+    },
+    "dependencies": {
+        "angular2": "2.0.0-beta.14",
+        "es6-shim": "^0.35.0",
+        "reflect-metadata": "0.1.2",
+        "rxjs": "5.0.0-beta.2",
+        "zone.js": "0.6.6",
+        "systemjs": "0.19.6"
+    },
+    "devDependencies": {
+        "concurrently": "^1.0.0",
+        "jasmine-core": "2.3.2",
+        "karma": "^0.13.22",
+        "karma-chrome-launcher": "^0.2.3",
+        "karma-coverage": "^0.5.5",
+        "karma-jasmine": "^0.3.8",
+        "remap-istanbul": "^0.5.1",
+        "typings": "^0.7.9",
+        "lite-server": "^1.3.1",
+        "typescript": "^1.8.9"
+    }
+}
